@@ -39,11 +39,12 @@ this installs dynamodb in your project folder
 
  **dynamodb start options**
  you can add this as you start your dynamodb instance
+ 
 |*options*| *description*  | *Command*  | 
 |--|--|--|
 |--port  | used to set port where dynamodb will run default is 8000  | `sls dynamodb start --port 3000` 
 |--seed  | this determines which data to onload  | `sls dynamodb start --seed`
-|--migrate | creates dynamodb offline tables from serverless configs   | `sls dynamodb start --seed`
+|--migrate | creates dynamodb offline tables from serverless configs   | `sls dynamodb start --seed`	
 
 **update serverless.yml file**
 
