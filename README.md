@@ -22,6 +22,14 @@ doing this you will have to download the AWS CLI for [windows](https://docs.aws.
 **install serverless-dynamodb-local**
 
        npm i serverless-dynamodb-local 
+       
+       
+**update serverless.yml file**
+
+    plugins:
+     -  serverless-dynamodb-local
+     -  serverless-offline
+
 
 
 **install dynamodb offline**
@@ -46,11 +54,6 @@ this installs dynamodb in your project folder
 |--seed  | this determines which data to onload  | `sls dynamodb start --seed`
 |--migrate | creates dynamodb offline tables from serverless configs   | `sls dynamodb start --seed`	
 
-**update serverless.yml file**
-
-    plugins:
-     -  serverless-dynamodb-local
-     -  serverless-offline
 
 
 **seeding with dynamodb**
