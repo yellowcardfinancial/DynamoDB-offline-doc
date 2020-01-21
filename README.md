@@ -61,41 +61,15 @@ this is used to onload data in dynamodb .this is found in `project-folder/resour
 
     sls dynamodb seed
 
-**view table data in dynamodb** 
-open up `http://localhost:{your running port here}/shell` 
-and execute the below script. Please change the table name as per your requirement.
+**view table data in dynamodb**: -
+You have to setup [dynamodb-admin](https://github.com/aaronshaf/dynamodb-admin) (GUI for DynamoDB Local or dynalite)
 
 ```
-var dynamodb = new AWS.DynamoDB({
-region: 'us-east-1',
-endpoint: "http://localhost:8000"
-});
-var tableName = "TESTTABLE";
+npm install dynamodb-admin -g
 
-var params = {
-TableName: tableName,
-Select: "ALL_ATTRIBUTES"
-};
+export DYNAMO_ENDPOINT=http://localhost:8000 //the port with your running dynamodb instance
 
-
-function doScan(response) {
-if (response.error) ppJson(response.error); // an error occurred
-else {
-    ppJson(response.data); // successful response
-
-    // More data.  Keep calling scan.
-    if ('LastEvaluatedKey' in response.data) {
-        response.request.params.ExclusiveStartKey = response.data.LastEvaluatedKey;
-        dynamodb.scan(response.request.params)
-            .on('complete', doScan)
-            .send();
-    }
-}
-}
-console.log("Starting a Scan of the table");
-dynamodb.scan(params)
-.on('complete', doScan)
-.send();
+dynamodb-admin
 ```
 **uninstall dynamodb**
 this is useful in debugging when dynamodb fails
