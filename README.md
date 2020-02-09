@@ -52,7 +52,7 @@ this installs dynamodb in your project folder
 |--|--|--|
 |--port  | used to set port where dynamodb will run default is 8000  | `sls dynamodb start --port 3000` 
 |--seed  | this determines which data to onload  | `sls dynamodb start --seed`
-|--migrate | creates dynamodb offline tables from serverless configs   | `sls dynamodb start --seed`	
+|--migrate | creates dynamodb offline tables from serverless configs   | `sls dynamodb start --migrate`	
 
 
 
@@ -75,11 +75,8 @@ dynamodb-admin
 this is useful in debugging when dynamodb fails
 
     sls dynamodb remove
+ 
 
-## BUGS 😭😭😭
-still having bugs? no issue go to 
-[we hate bugs](https://github.com/yellowcardfinancial/we-hate-bugs) locate your bugs in the list with solutions 
-if bug is `404` in list then ask anyone for help
 
 
 
